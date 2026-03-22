@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Truf Up Sports</title>
+<link rel="stylesheet" href="sport.css">
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+<section class="home" id="home">
+    <h1 class="brand">TRUF UP</h1>
+    <button class="bookBtn" onclick="openBooking()">Book Slot</button>
+</section>
+
+<!-- BOOKING PAGE -->
+<section class="booking" id="booking">
+
+<div class="card">
+
+<h2>Book Your Sport</h2>
+
+<input type="text" placeholder="Enter Name" id="name">
+
+<select id="sport">
+<option>Select Sport</option>
+<option>Cricket</option>
+<option>Football</option>
+<option>Badminton</option>
+<option>Tennis</option>
+<option>Basketball</option>
+</select>
+
+<input type="date" id="date">
+
+<div class="slots">
+<button onclick="selectSlot(this)">6AM</button>
+<button onclick="selectSlot(this)">8AM</button>
+<button onclick="selectSlot(this)">10AM</button>
+<button onclick="selectSlot(this)">4PM</button>
+<button onclick="selectSlot(this)">6PM</button>
+<button onclick="selectSlot(this)">8PM</button>
+</div>
+
+<button class="payBtn" onclick="pay()">Make Payment ₹500</button>
+
+<p id="msg"></p>
+
+</div>
+
+</section>
+
+<script>
+
+let selectedSlot=""
+
+function openBooking(){
+document.getElementById("home").style.display="none"
+document.getElementById("booking").style.display="flex"
+}
+
+function selectSlot(btn){
+
+document.querySelectorAll(".slots button")
+.forEach(b=>b.classList.remove("active"))
+
+btn.classList.add("active")
+
+selectedSlot=btn.innerText
+
+}
+
+function pay(){
+
+let name=document.getElementById("name").value
+let sport=document.getElementById("sport").value
+let date=document.getElementById("date").value
+
+if(!name || sport==="Select Sport" || !date || !selectedSlot){
+alert("Fill all details")
+return
+}
+
+document.getElementById("msg").innerText="✅ Booking Confirmed!"
+
+}
+
+</script>
+
+</body>
+</html>
