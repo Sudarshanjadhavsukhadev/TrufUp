@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxe Cakes</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;background:#faf7f2;color:#2b2b2b}
+    a{text-decoration:none;color:inherit}
+
+    .container{width:90%;max-width:1200px;margin:auto}
+
+    /* Header */
+    header{background:#ffffff;box-shadow:0 4px 20px rgba(0,0,0,.05);position:sticky;top:0;z-index:10}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+    .logo{font-family:'Playfair Display',serif;font-size:28px;letter-spacing:2px}
+    nav ul{list-style:none;display:flex;gap:30px}
+    nav li{font-weight:500}
+
+    .menu-btn{display:none;font-size:26px;cursor:pointer}
+
+    /* Hero */
+    .hero{background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url('https://images.unsplash.com/photo-1558021212-51b6ecfa0db9');background-size:cover;background-position:center;height:85vh;display:flex;align-items:center}
+    .hero-box{background:rgba(255,255,255,.9);padding:50px;border-radius:12px;max-width:520px}
+    .hero h1{font-family:'Playfair Display',serif;font-size:44px;margin-bottom:15px}
+    .hero p{margin-bottom:25px;color:#555}
+
+    .btn{display:inline-block;background:#c9a24d;color:#fff;padding:12px 28px;border-radius:30px;font-weight:500}
+
+    section{padding:80px 0}
+    h2{text-align:center;font-family:'Playfair Display',serif;font-size:34px;margin-bottom:50px}
+
+    /* Products */
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px}
+    .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.08);transition:.3s}
+    .card:hover{transform:translateY(-6px)}
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card-body{padding:18px}
+    .price{color:#c9a24d;font-weight:600}
+
+    /* About */
+    .about{background:#fff}
+    .about p{text-align:center;max-width:750px;margin:auto;font-size:17px;color:#555}
+
+    /* Contact */
+    .contact{background:#f4efe8}
+    .contact form{max-width:600px;margin:auto;display:grid;gap:16px}
+    input,textarea{padding:12px;border:1px solid #ccc;border-radius:8px;font-family:'Poppins'}
+
+    footer{background:#1c1c1c;color:#c9a24d;text-align:center;padding:25px}
+
+    /* Mobile */
+    @media(max-width:768px){
+      nav ul{position:absolute;top:70px;left:0;width:100%;background:#fff;flex-direction:column;align-items:center;display:none;padding:20px 0}
+      nav ul.show{display:flex}
+      .menu-btn{display:block}
+      .hero-box{margin:20px}
+      .hero h1{font-size:32px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">LUXE CAKES</div>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#cakes">Cakes</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-box">
+      <h1>Luxury Cakes for Elegant Celebrations</h1>
+      <p>Handcrafted premium cakes using the finest ingredients for unforgettable moments.</p>
+      <a href="#cakes" class="btn">Explore Collection</a>
+    </div>
+  </div>
+</section>
+
+<section id="cakes">
+  <h2>Signature Cakes</h2>
+  <div class="container products">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" />
+      <div class="card-body">
+        <h3>Belgian Chocolate</h3>
+        <p class="price">₹899</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa" />
+      <div class="card-body">
+        <h3>Red Velvet Royale</h3>
+        <p class="price">₹1099</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1589308078059-9181d16bfa34" />
+      <div class="card-body">
+        <h3>Berry Delight</h3>
+        <p class="price">₹999</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>
+    At Luxe Cakes, we specialize in premium handcrafted desserts designed to impress. From weddings to corporate events, every cake is crafted with elegance, precision, and passion.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button class="btn">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Luxe Cakes. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu(){
+    document.getElementById('menu').classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>

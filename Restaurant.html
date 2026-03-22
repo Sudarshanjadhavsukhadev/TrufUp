@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Spice Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:#f8f8f8;color:#333}
+
+    header{
+      background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5');
+      background-size:cover;
+      background-position:center;
+      height:90vh;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    header h1{font-size:3.5rem;margin-bottom:10px}
+    header p{font-size:1.2rem;margin-bottom:25px}
+    .btn{background:#e63946;color:#fff;padding:12px 28px;text-decoration:none;border-radius:30px;font-weight:600}
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#111;
+      padding:15px 50px;
+      display:flex;
+      justify-content:space-between;
+      z-index:1000
+    }
+
+    nav h2{color:#fff}
+    nav ul{display:flex;list-style:none}
+    nav ul li{margin-left:25px}
+    nav ul li a{color:#fff;text-decoration:none;font-weight:500}
+
+    section{padding:70px 10%}
+    .section-title{text-align:center;margin-bottom:50px}
+    .section-title h2{font-size:2.5rem;color:#222}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .about img{width:100%;border-radius:15px}
+
+    .menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .menu-item{background:#fff;padding:25px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.1)}
+    .menu-item h3{margin-bottom:10px}
+
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+    .contact form input,.contact form textarea{
+      width:100%;padding:12px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc
+    }
+    .contact form button{border:none;cursor:pointer}
+
+    footer{
+      background:#111;color:#aaa;text-align:center;padding:25px
+    }
+
+    @media(max-width:768px){
+      .about,.contact{grid-template-columns:1fr}
+      header h1{font-size:2.5rem}
+      nav{padding:15px 20px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h2>Royal Spice</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="home">
+  <h1>Welcome to Royal Spice</h1>
+  <p>Delicious Food • Cozy Ambience • Best Service</p>
+  <a href="#menu" class="btn">View Menu</a>
+</header>
+
+<section id="about">
+  <div class="section-title"><h2>About Us</h2></div>
+  <div class="about">
+    <div>
+      <p>
+        Royal Spice is a premium restaurant offering authentic flavors with modern dining experience. Our chefs use fresh ingredients and traditional recipes to serve unforgettable dishes.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="restaurant">
+  </div>
+</section>
+
+<section id="menu">
+  <div class="section-title"><h2>Our Menu</h2></div>
+  <div class="menu">
+    <div class="menu-item"><h3>Paneer Butter Masala</h3><p>₹250</p></div>
+    <div class="menu-item"><h3>Chicken Biryani</h3><p>₹320</p></div>
+    <div class="menu-item"><h3>Butter Naan</h3><p>₹40</p></div>
+    <div class="menu-item"><h3>Chocolate Dessert</h3><p>₹180</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title"><h2>Contact Us</h2></div>
+  <div class="contact">
+    <div>
+      <p><strong>Address:</strong> Mumbai, India</p>
+      <p><strong>Phone:</strong> +91 9876543210</p>
+      <p><strong>Email:</strong> info@royalspice.com</p>
+    </div>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Message"></textarea>
+      <button class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Royal Spice Restaurant. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

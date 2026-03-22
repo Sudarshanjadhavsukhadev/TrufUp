@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trainer App</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f5f7;
+}
+
+/* APP CONTAINER */
+.app {
+  max-width: 420px;
+  margin: auto;
+  min-height: 100vh;
+  background: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  background: #4f46e5;
+  color: white;
+  padding: 16px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.header h3 {
+  margin: 0;
+}
+
+.header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 16px;
+}
+
+/* SELECT CARD */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* SCREEN */
+.screen {
+  text-align: center;
+  background: #e5e7eb;
+  padding: 6px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+/* SEATS */
+.seats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.seat {
+  height: 46px;
+  border-radius: 12px;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.seat.present {
+  background: #22c55e;
+  color: white;
+}
+
+.seat.absent {
+  background: #ef4444;
+  color: white;
+}
+
+/* LEGEND */
+.legend {
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.box {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+/* SUMMARY */
+.summary {
+  margin-top: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* BOTTOM NAV */
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+
+.nav div {
+  font-size: 12px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.nav .active {
+  color: #4f46e5;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h3>Hi Trainer 👋</h3>
+    <p>Pune • Karate Morning</p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="card">
+      <select>
+        <option>Morning Batch</option>
+        <option>Evening Batch</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <div class="screen">STUDENTS</div>
+      <div class="seats" id="seats"></div>
+
+      <div class="legend">
+        <span><div class="box" style="background:#22c55e"></div>Present</span>
+        <span><div class="box" style="background:#ef4444"></div>Absent</span>
+        <span><div class="box" style="background:#e5e7eb"></div>None</span>
+      </div>
+
+      <div class="summary" id="summary">
+        Present: 0 | Absent: 0
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <div class="nav">
+    <div class="active">Home</div>
+    <div>Attendance</div>
+    <div>Profile</div>
+  </div>
+
+</div>
+
+<script>
+const seatsEl = document.getElementById("seats");
+const summary = document.getElementById("summary");
+
+let present = 0;
+let absent = 0;
+
+for (let i = 1; i <= 25; i++) {
+  const seat = document.createElement("div");
+  seat.className = "seat";
+  seat.innerText = i;
+
+  seat.onclick = () => {
+    if (seat.classList.contains("present")) {
+      seat.classList.remove("present");
+      seat.classList.add("absent");
+      present--;
+      absent++;
+    } else if (seat.classList.contains("absent")) {
+      seat.classList.remove("absent");
+      absent--;
+    } else {
+      seat.classList.add("present");
+      present++;
+    }
+
+    summary.innerText = `Present: ${present} | Absent: ${absent}`;
+  };
+
+  seatsEl.appendChild(seat);
+}
+</script>
+
+</body>
+</html>

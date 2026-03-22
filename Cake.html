@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Bliss Cake Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:#fff;color:#333}
+    a{text-decoration:none;color:inherit}
+
+    header{background:#ff4d6d;color:#fff;padding:15px 0;position:sticky;top:0;z-index:10}
+    .container{width:90%;max-width:1200px;margin:auto}
+
+    nav{display:flex;justify-content:space-between;align-items:center}
+    nav ul{list-style:none;display:flex;gap:25px}
+    nav li{font-weight:500}
+
+    .menu-btn{display:none;font-size:26px;cursor:pointer}
+
+    .hero{background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('https://images.unsplash.com/photo-1542826438-7b3bfe65c1f4?auto=format&fit=crop&w=1350&q=80');background-size:cover;background-position:center;min-height:80vh;display:flex;align-items:center;color:#fff}
+    .hero-content{max-width:600px}
+    .hero h1{font-size:48px;margin-bottom:15px}
+    .hero p{margin-bottom:25px}
+    .btn{display:inline-block;background:#ff4d6d;color:#fff;padding:12px 25px;border-radius:30px;font-weight:500}
+
+    section{padding:70px 0}
+    h2{text-align:center;margin-bottom:40px;font-size:32px;color:#ff4d6d}
+
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:.3s}
+    .card:hover{transform:translateY(-5px)}
+    .card img{width:100%;height:200px;object-fit:cover}
+    .card-body{padding:15px}
+    .price{color:#ff4d6d;font-weight:600}
+
+    .about{background:#fff5f7}
+    .about p{max-width:800px;margin:auto;text-align:center;font-size:18px}
+
+    .contact form{max-width:600px;margin:auto;display:grid;gap:15px}
+    input,textarea{padding:12px;border:1px solid #ccc;border-radius:8px;width:100%}
+    button{border:none;cursor:pointer}
+
+    footer{background:#111;color:#fff;padding:25px;text-align:center}
+
+    /* Mobile Responsive */
+    @media(max-width:768px){
+      nav ul{position:absolute;top:60px;left:0;width:100%;background:#ff4d6d;flex-direction:column;align-items:center;display:none}
+      nav ul.show{display:flex}
+      .menu-btn{display:block}
+
+      .hero{padding:40px 0}
+      .hero h1{font-size:32px}
+      h2{font-size:26px}
+      section{padding:50px 0}
+    }
+
+    @media(max-width:480px){
+      .hero h1{font-size:26px}
+      .hero p{font-size:14px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <h2>Sweet Bliss</h2>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#cakes">Cakes</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Delicious Cakes for Every Occasion</h1>
+      <p>Freshly baked cakes with premium ingredients. Custom designs available for birthdays, weddings and celebrations.</p>
+      <a href="#cakes" class="btn">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="cakes">
+  <h2>Our Best Cakes</h2>
+  <div class="container products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" />
+      <div class="card-body">
+        <h3>Chocolate Cake</h3>
+        <p class="price">₹699</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa" />
+      <div class="card-body">
+        <h3>Red Velvet</h3>
+        <p class="price">₹899</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1589308078059-9181d16bfa34" />
+      <div class="card-body">
+        <h3>Fruit Cake</h3>
+        <p class="price">₹799</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>
+    Sweet Bliss Cake Shop is dedicated to crafting beautiful and delicious cakes using high-quality ingredients.
+    With years of experience, we bring sweetness to every celebration and make your moments unforgettable.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button class="btn">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Sweet Bliss Cake Shop. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu(){
+    document.getElementById('menu').classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>

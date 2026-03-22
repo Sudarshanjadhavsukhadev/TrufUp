@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Profile | LMV Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      background: #0e0e0e;
+      color: #fff;
+    }
+
+    /* APP BAR */
+    .app-bar {
+      height: 56px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-bottom: 1px solid #222;
+    }
+
+    .app-bar h1 {
+      flex: 1;
+      text-align: center;
+      font-size: 18px;
+      color: red;
+    }
+
+    .back-btn {
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    /* CONTENT */
+    .content {
+      padding: 16px;
+    }
+
+    /* PROFILE CARD */
+    .profile-card {
+      background: #151515;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .profile-pic {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid red;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .profile-card h2 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .profile-card p {
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    /* INFO CARD */
+    .card {
+      background: #151515;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: red;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .info-row span {
+      color: #bbb;
+    }
+
+    /* ATTENDANCE */
+    .attendance {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .attendance-box {
+      width: 48%;
+      background: #1f1f1f;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .attendance-box h4 {
+      font-size: 22px;
+      color: red;
+    }
+
+    .attendance-box p {
+      font-size: 12px;
+      color: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- APP BAR -->
+  <header class="app-bar">
+    <a href="index.html" class="back-btn">←</a>
+    <h1>Profile</h1>
+  </header>
+
+  <main class="content">
+
+    <!-- PROFILE -->
+    <div class="profile-card">
+      <img src="https://via.placeholder.com/150" class="profile-pic" />
+      <h2>Rahul Sharma</h2>
+      <p>Karate Student</p>
+    </div>
+
+    <!-- PERSONAL DETAILS -->
+    <div class="card">
+      <h3>Personal Details</h3>
+
+      <div class="info-row">
+        <span>Age</span>
+        <strong>16 Years</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Batch</span>
+        <strong>Evening</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Training</span>
+        <strong>Karate</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Belt Level</span>
+        <strong>Green Belt</strong>
+      </div>
+    </div>
+
+    <!-- ATTENDANCE -->
+    <div class="card">
+      <h3>Attendance</h3>
+
+      <div class="attendance">
+        <div class="attendance-box">
+          <h4>22</h4>
+          <p>Classes Attended</p>
+        </div>
+
+        <div class="attendance-box">
+          <h4>85%</h4>
+          <p>Attendance</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

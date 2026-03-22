@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UrbanBite Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#0e0e0e;color:#eaeaea}
+
+    header{
+      height:100vh;
+      background:linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.4)),
+      url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    header h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:2px}
+    header p{margin:20px 0;font-size:clamp(0.9rem,3vw,1.2rem);color:#ccc}
+
+    .btn{
+      display:inline-block;
+      margin-top:15px;
+      padding:12px 30px;
+      border:2px solid #cfa670;
+      color:#cfa670;
+      text-decoration:none;
+      transition:.3s;
+      border-radius:30px
+    }
+    .btn:hover{background:#cfa670;color:#000}
+
+    nav{
+      position:fixed;
+      top:0;left:0;width:100%;
+      padding:15px 6%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(6px);
+      z-index:10
+    }
+
+    nav h2{font-family:'Playfair Display',serif;color:#cfa670}
+
+    .nav-links{display:flex;list-style:none}
+    .nav-links li{margin-left:25px}
+    .nav-links a{color:#fff;text-decoration:none}
+
+    .menu-btn{display:none;font-size:26px;color:#cfa670;cursor:pointer}
+
+    section{padding:80px 6%}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px
+    }
+
+    .card{
+      background:#161616;
+      padding:22px;
+      border-radius:16px;
+      transition:.3s
+    }
+    .card:hover{transform:translateY(-6px)}
+
+    .card h3{color:#cfa670;margin-bottom:10px}
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center
+    }
+
+    .split img{width:100%;border-radius:20px}
+
+    footer{
+      background:#000;
+      padding:25px;
+      text-align:center;
+      color:#888
+    }
+
+    input,textarea{
+      width:100%;padding:12px;margin-bottom:15px;
+      background:#111;border:1px solid #333;color:#fff;border-radius:8px
+    }
+
+    /* Mobile Styles */
+    @media(max-width:768px){
+      .split{grid-template-columns:1fr}
+
+      .nav-links{
+        position:absolute;
+        top:65px;
+        right:0;
+        width:100%;
+        background:#000;
+        flex-direction:column;
+        align-items:center;
+        display:none
+      }
+
+      .nav-links li{margin:15px 0}
+      .menu-btn{display:block}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h2>UrbanBite</h2>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#special">Specials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="home">
+  <div>
+    <h1>UrbanBite</h1>
+    <p>Luxury Dining • Crafted Flavors • City Vibes</p>
+    <a href="#special" class="btn">Explore Menu</a>
+  </div>
+</header>
+
+<section id="story">
+  <div class="split">
+    <div>
+      <h2 style="color:#cfa670;font-family:'Playfair Display',serif">Our Story</h2>
+      <p style="margin-top:15px;color:#ccc">
+        UrbanBite was built to redefine modern dining. From handcrafted recipes to premium ambiance, we blend taste with elegance to give you an unforgettable culinary journey.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" />
+  </div>
+</section>
+
+<section id="special">
+  <h2 style="text-align:center;color:#cfa670;font-family:'Playfair Display',serif;margin-bottom:40px">Chef's Specials</h2>
+  <div class="grid">
+    <div class="card"><h3>Truffle Pasta</h3><p>₹420</p></div>
+    <div class="card"><h3>Grilled Salmon</h3><p>₹650</p></div>
+    <div class="card"><h3>Signature Burger</h3><p>₹320</p></div>
+    <div class="card"><h3>Molten Chocolate Cake</h3><p>₹240</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 style="text-align:center;color:#cfa670;font-family:'Playfair Display',serif;margin-bottom:30px">Reserve a Table</h2>
+  <div class="grid">
+    <div>
+      <p>📍 Pune, India</p>
+      <p>📞 +91 9000000000</p>
+      <p>✉️ contact@urbanbite.com</p>
+    </div>
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="4" placeholder="Message"></textarea>
+      <button class="btn">Send</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 UrbanBite Restaurant. Designed with ❤️</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav = document.getElementById('navLinks');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
+</body>
+</html>

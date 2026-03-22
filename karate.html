@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karate | LMV Academy</title>
+
+  <!-- INLINE CSS -->
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: #0e0e0e;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    /* APP BAR */
+    .app-bar {
+      height: 56px;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .app-bar h1 {
+      flex: 1;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #ff2a2a;
+    }
+
+    .back-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* CONTENT */
+    .content {
+      padding: 16px;
+    }
+
+    /* CARD */
+    .card {
+      background-color: #151515;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #ff2a2a;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #dddddd;
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .card li {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 6px;
+      color: #dddddd;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    /* MOBILE OPTIMIZATION */
+    @media (max-width: 480px) {
+      .card {
+        padding: 14px;
+      }
+
+      .app-bar h1 {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- APP BAR -->
+  <header class="app-bar">
+    <a href="index.html" class="back-btn">←</a>
+    <h1>Karate</h1>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <section class="card">
+      <h2>🥋 Karate Training</h2>
+      <p>
+        Karate focuses on discipline, strength, self-defense,
+        and mental control through Kihon, Kata, and Kumite.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>🥗 Diet Plan</h3>
+      <ul>
+        <li>Fruits before training</li>
+        <li>Balanced meals after training</li>
+        <li>High protein & hydration</li>
+        <li>No junk food</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>⏰ Training Slots</h3>
+      <ul>
+        <li>Kids: 5:00 – 6:00 PM</li>
+        <li>Teens: 6:00 – 7:30 PM</li>
+        <li>Adults: 7:30 – 9:00 PM</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>📅 Attendance Rules</h3>
+      <p>
+        Minimum <strong>75% attendance</strong> required
+        for belt exams. Attendance is marked daily by trainers.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
